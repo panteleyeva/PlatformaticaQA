@@ -123,5 +123,17 @@ public class GroupJavaBears_Test extends BaseTest {
         WebElement search_result = browser.findElement(By.xpath("//h2[contains(text(), 'Search Results')]"));
         Assert.assertEquals(search_result.getText(), "SEARCH RESULTS");
     }
+    
+    @Test
+    public void bogdanQA() throws InterruptedException {
+        WebDriver browser = getDriver();
+        browser.get("https://en.wikipedia.org/wiki/Main_Page");
+
+        WebElement button = browser.findElement(By.xpath("//li[@id='ca-view']/a[contains(text(),'Read')]"));
+        Thread.sleep(3000);
+        Assert.assertEquals(button.getText(), "Read");
+
+        button.click();
+    }
 
 }
