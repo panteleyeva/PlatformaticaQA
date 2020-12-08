@@ -68,8 +68,6 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
     @Test
     public void Kristina324() throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "c:/Project/WEBDRIVER/chromedriver.exe");
-
         WebDriver browser = new ChromeDriver();
         browser.get("https://www.thesaurus.com/");
 
