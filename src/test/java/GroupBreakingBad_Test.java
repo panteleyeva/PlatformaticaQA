@@ -54,7 +54,7 @@ public class GroupBreakingBad_Test extends BaseTest {
     }
 
     @Test
-    public void searchFieldTestPK() throws InterruptedException {
+    public void peterKuzyk() throws InterruptedException {
 
         WebDriver driver = getDriver();
         Actions actions = new Actions(driver);
