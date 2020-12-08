@@ -60,6 +60,18 @@ public class Group_of_bug_killers_Test extends BaseTest {
         Assert.assertEquals(name.getText(), "Languages");
     }
 
+    @Test
+    public void vladBezpalko() {
+
+        WebDriver browser = getDriver();
+        browser.get("https://office.ooma.com/");
+        WebElement phone_field = browser.findElement(By.id("phone-label"));
+        WebElement password_field = browser.findElement(By.xpath("//*[@id='password']/../*[@class='input-label']"));
+
+        Assert.assertEquals(phone_field.getText(), "ENTER PHONE");
+        Assert.assertEquals(password_field.getText(), "ENTER PASSWORD");
+    }
+
 
     @Ignore
     @Test
