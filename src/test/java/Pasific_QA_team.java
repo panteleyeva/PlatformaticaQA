@@ -26,5 +26,46 @@ public class Pasific_QA_team extends BaseTest {
 
         Thread.sleep(3000);
     }
+
+    //Task E
+//https://docs.google.com/document/d/1Gl1IDGFr6UnYAnyLfwmGqtl0NV9DHbOBmjsPep7I4K8/edit
+//Необходимо найти XPath запросы для элементов выделенных на странице
+// https://github.com/SergeiDemyanenko/PlatformaticaQA
+    @Test
+    public void taskE_1() throws InterruptedException {
+
+        WebDriver browser = getDriver();
+        browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+        WebElement name = browser.findElement(By.xpath("//*[@data-tab-item='i0code-tab']"));
+
+        Assert.assertEquals(name.getText(), "Code");
+
+        Thread.sleep(3000);
+    }
+
+    @Test
+    public void taskE_2() throws InterruptedException {
+
+        WebDriver browser = getDriver();
+        browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+        WebElement name = browser.findElement(By.xpath("//*[@data-tab-item='i1issues-tab']"));
+
+        Assert.assertEquals(name.getText(), "Issues");
+
+        Thread.sleep(3000);
+    }
+
+    @Test
+    public void taskE_3() throws InterruptedException {
+
+        WebDriver browser = getDriver();
+        browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+        WebElement name = browser.findElement(By.xpath("//*[@data-tab-item='i2pull-requests-tab']"));
+
+        Assert.assertEquals(name.getText(), "Pull requests");
+
+        Thread.sleep(3000);
+    }
+
 }
 
