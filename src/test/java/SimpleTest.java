@@ -49,5 +49,50 @@ public class SimpleTest extends BaseTest {
         Assert.assertEquals(driver.getCurrentUrl(), "https://github.com/SergeiDemyanenko/PlatformaticaQA/branches");
     }
 
+    @Test
+    //Задача 13
+    //
+    //Необходимо написать любой тест, для любой страницы (лучше не использовать google и подобные ресурсы), в тесте должно быть:
+    //переход по адресу
+    //поиск элемента
+    //валидация данных полученная от элемента
+    //
+    //Тест может быть более сложным, смотрите по своим силам, тест должен запускаться через TestNG.
+    public void task13() throws InterruptedException {
 
+        WebDriver browser = getDriver();
+        browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+        WebElement button = browser.findElement(By.xpath("//span[contains(text(), 'Pull request')]"));
+        button.click();
+
+        Thread.sleep(2000);
+
+        Assert.assertEquals(browser.getCurrentUrl(), "https://github.com/SergeiDemyanenko/PlatformaticaQA/pulls");
+
+        Thread.sleep(3000);
+    }
+
+   // @Test
+//Задача 14
+//
+//Необходимо сделать PR, чтобы он прошел все тесты, был одобрен и попал в главную ветку. Код для PR возьмите
+//из предыдущего ДЗ (Tasks#13). Имя класса для вашего теста должно совпадать с именем вашей группы,
+//а имя теста с вашим именем и фамилией.
+    /*public void task14() throws InterruptedException {
+
+        WebDriver browser = getDriver();
+        browser.get("https://github.com/SergeiDemyanenko/PlatformaticaQA");
+        WebElement button = browser.findElement(By.xpath("//span[contains(text(), 'Pull request')]"));
+        button.click();
+
+        Thread.sleep(2000);
+
+        Assert.assertEquals(browser.getCurrentUrl(), "https://github.com/SergeiDemyanenko/PlatformaticaQA/pulls");
+
+        Thread.sleep(3000);
+    }*/
+
+//Task E
+//https://docs.google.com/document/d/1Gl1IDGFr6UnYAnyLfwmGqtl0NV9DHbOBmjsPep7I4K8/edit
+//Необходимо найти XPath запросы для элементов выделенных на странице https://github.com/SergeiDemyanenko/PlatformaticaQA
 }
