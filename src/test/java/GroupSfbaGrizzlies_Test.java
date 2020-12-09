@@ -66,7 +66,7 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
     }
 
     @Test
-    public void Kristina324() throws InterruptedException {
+    public void kristinaMarachova() throws InterruptedException {
 
         WebDriver browser = new ChromeDriver();
         browser.get("https://www.thesaurus.com/");
@@ -75,7 +75,7 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
 
         Assert.assertEquals(name.getText(), "THESAURUS.COM");
 
-        Thread.sleep(3000);
+        Thread.sleep(1500);
         browser.close();
     }
 }
