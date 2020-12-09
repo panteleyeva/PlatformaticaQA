@@ -1,10 +1,15 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import runner.BaseTest;
+
+import java.util.List;
+import java.util.Set;
 
 public class GroupSfbaGrizzlies_Test extends BaseTest {
 
@@ -62,5 +67,28 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
         Thread.sleep(2000);
         Assert.assertEquals(text.getText(), "Log In / My VPL\n" +
                 "User Log In / My VPL.");
+    }
+
+    @Test
+    public void vasylynaSh() {
+        WebDriver browser = getDriver();
+        browser.get("https://www.kmart.com/");
+        new WebDriverWait(browser,10).until(ExpectedConditions.elementToBeClickable(By.linkText("Contact Us")));
+        WebElement element = browser.findElement(By.linkText("Contact Us"));
+        Assert.assertTrue(element.isDisplayed(), "Cannot find element");
+
+        element.click();
+        String title = "Kmart Help";
+        Set<String> allTabs = browser.getWindowHandles();
+        for (String tab: allTabs)
+        {
+            browser.switchTo().window(tab);
+            if (title.equals(browser.getTitle()))
+                break;
+        }
+        Assert.assertEquals(1, browser.findElements(By.tagName("input")).size());
+
+        List<WebElement> list = browser.findElements(By.id("noElement"));
+        Assert.assertEquals(list.size(), 0);
     }
 }
