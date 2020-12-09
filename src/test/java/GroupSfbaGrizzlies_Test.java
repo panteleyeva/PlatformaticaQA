@@ -86,7 +86,7 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
             if (title.equals(browser.getTitle()))
                 break;
         }
-        Assert.assertEquals(1, browser.findElements(By.tagName("input")).size());
+        Assert.assertEquals(browser.findElements(By.tagName("input")).size(), 1);
 
         List<WebElement> list = browser.findElements(By.id("noElement"));
         Assert.assertEquals(list.size(), 0);
