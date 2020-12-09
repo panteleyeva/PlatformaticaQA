@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import runner.BaseTest;
 
@@ -71,7 +70,6 @@ public class Group_of_bug_killers_Test extends BaseTest {
         Assert.assertEquals(phone_field.getText(), "ENTER PHONE");
         Assert.assertEquals(password_field.getText(), "ENTER PASSWORD");
     }
-
 
     @Ignore
     @Test
