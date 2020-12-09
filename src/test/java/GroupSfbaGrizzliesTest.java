@@ -7,11 +7,10 @@ import org.testng.Assert;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import runner.BaseTest;
-
 import java.util.List;
 import java.util.Set;
 
-public class GroupSfbaGrizzlies_Test extends BaseTest {
+public class GroupSfbaGrizzliesTest extends BaseTest {
 
     @Test
     public void klavdiaGoldshteyn() throws InterruptedException {
@@ -20,23 +19,18 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
        WebElement title = browser.findElement(By.xpath("//h1[@id='firstHeading']"));
 
        Assert.assertEquals(title.getText(), "Roger Federer");
-
-       Thread.sleep(3000);
-   }
-
+    }
 
     @Test
     public void gayaneMfirst() throws InterruptedException {
         WebDriver browser = getDriver();
         browser.get("https://www.elvisthemusic.com/");
+
         WebElement link = browser.findElement(By.xpath("//a[contains(@href,'/news/')]"));
         link.click();
         Thread.sleep(2000);
 
         Assert.assertEquals(browser.getCurrentUrl(),"https://www.elvisthemusic.com/news/");
-
-        Thread.sleep(3000);
-
     }
 
     @Ignore
@@ -53,27 +47,25 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
         WebElement text = driver.findElement(By.xpath("//div//span[3][contains(text(), 'brel')]"));
 
         Assert.assertEquals(text.getText(),"\"umbrella\"");
-
-        Thread.sleep(3000);
-
     }
-    @Test
 
+    @Test
     public void lanaRogova() throws InterruptedException {
 
         WebDriver browser = getDriver();
         browser.get("https://vpl.bibliocommons.com/v2/");
+
         WebElement text = browser.findElement(By.xpath("//a[@id='biblionav_account_trigger']"));
-        Thread.sleep(2000);
-        Assert.assertEquals(text.getText(), "Log In / My VPL\n" +
-                "User Log In / My VPL.");
+        Assert.assertEquals(text.getText(), "Log In / My VPL\nUser Log In / My VPL.");
     }
 
     @Test
     public void vasylynaSh() {
         WebDriver browser = getDriver();
         browser.get("https://www.kmart.com/");
-        new WebDriverWait(browser,10).until(ExpectedConditions.elementToBeClickable(By.linkText("Contact Us")));
+
+        new WebDriverWait(browser,10).until(ExpectedConditions.elementToBeClickable
+                (By.linkText("Contact Us")));
         WebElement element = browser.findElement(By.linkText("Contact Us"));
         Assert.assertTrue(element.isDisplayed(), "Cannot find element");
 
@@ -87,8 +79,5 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
                 break;
         }
         Assert.assertEquals(browser.findElements(By.tagName("input")).size(), 1);
-
-        List<WebElement> list = browser.findElements(By.id("noElement"));
-        Assert.assertEquals(list.size(), 0);
     }
 }
