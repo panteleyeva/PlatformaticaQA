@@ -75,7 +75,7 @@ public class GroupSfbaGrizzlies_Test extends BaseTest {
 
         Assert.assertEquals(name.getText(), "THESAURUS.COM");
 
-        Thread.sleep(1500);
+        Thread.sleep(1000);
         browser.close();
     }
 }
