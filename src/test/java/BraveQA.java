@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -23,7 +24,6 @@ public class BraveQA extends BaseTest {
         searchButton.click();
         Thread.sleep(2000);
     }
-
 
     @Test
     public void dmitrySearch() throws InterruptedException {
